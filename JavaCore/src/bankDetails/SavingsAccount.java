@@ -1,0 +1,32 @@
+package bankDetails;
+
+public class SavingsAccount extends Account {
+	private double interestRate;
+
+	public double getInterestRate() {
+		return interestRate;
+	}
+
+	public void setInterestRate(double interestRate) {
+		this.interestRate = interestRate;
+	}
+
+	public SavingsAccount(String accountNumber, double interestRate) {
+		super(accountNumber);
+		// TODO Auto-generated constructor stub
+		this.interestRate = interestRate;
+	}
+
+	public double getBalance() {
+		return balance + balance * interestRate;
+	}
+
+	public void deposit(double amount) {
+		this.balance += amount;
+	}
+
+	public void printInfo() {
+		System.out.println("Savings Account created with account number " + accountNumber);
+		System.out.println("Interest Rate of savings account: " + interestRate);
+	}
+}

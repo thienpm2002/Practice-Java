@@ -1,0 +1,5 @@
+package bankDetails;
+
+public abstract class Account {
+
+}

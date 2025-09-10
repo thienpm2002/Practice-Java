@@ -1,0 +1,16 @@
+package IndianSecretUnit;
+
+public class Main {
+	public static void main(String[] args) {
+		IndianSecretUnit unit = new IndianSecretUnit();
+
+		// Add 5 RAW agents
+		unit.addAgent(new RAWAgent(101, "Shadow", "Operation Eagle Eye"));
+		unit.addAgent(new RAWAgent(102, "Phantom", "Operation Desert Storm"));
+		unit.addAgent(new RAWAgent(103, "Viper", "Operation Night Fury"));
+		unit.addAgent(new RAWAgent(104, "Ghost", "Operation Silent Hawk"));
+		unit.addAgent(new RAWAgent(105, "Falcon", "Operation Iron Fist"));
+
+		unit.printInfor();
+	}
+}

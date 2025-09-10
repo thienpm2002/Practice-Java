@@ -1,0 +1,14 @@
+package Animal;
+
+public class Solution {
+	public static void main(String[] args) {
+		Dog dog = new Dog();
+		Cow cow = new Cow();
+
+		dog.eat();
+		dog.sound();
+		cow.eat();
+		cow.sound();
+
+	}
+}

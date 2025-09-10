@@ -1,0 +1,11 @@
+package Animal;
+
+public class Dog implements Animal {
+	public void sound() {
+		System.out.println("Dog braks.!");
+	}
+
+	public void eat() {
+		System.out.println("Dog Eats bone.");
+	}
+}

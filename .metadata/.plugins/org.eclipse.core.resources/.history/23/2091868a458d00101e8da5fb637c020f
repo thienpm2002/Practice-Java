@@ -1,0 +1,16 @@
+package LogicBuildingProblems;
+
+class Bai1 {
+
+	public static int swap(int a, int b, int n) {
+		int kc = b - a;
+
+		return a + (n-1) * kc;
+	}
+
+	public static void main(String[] args) {
+		int n = -11;
+		int m = 6;
+		System.out.println(swap(n, m));
+	}
+}

@@ -1,0 +1,30 @@
+package OrderSystem;
+
+import java.util.Scanner;
+
+public class OrderSystem {
+    public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		Customer cus = new Customer("Thien");
+		System.out.println("1. Add Product to Cart");
+		System.out.println("Product ID: ");
+		int id = s.nextInt();
+		s.nextLine();
+		System.out.println("Product Name: ");
+		String name = s.nextLine();
+		System.out.println("Price: ");
+		double price = s.nextDouble();
+		s.nextLine();
+		Product product = new Product(id,name,price);
+		cus.getCart().addItem(product);
+		System.out.println("2. Remove Product from Cart");
+		int productId = s.nextInt();
+		s.nextLine();
+		cus.getCart().removeItem(productId);
+		System.out.println("3. View Cart");
+		cus.getCart().viewCart();
+		String placeOrder = s.nextLine();
+		System.out.println("4. Order Placed Successfully. Thank you for shopping with us!");
+		s.close();
+	}
+}

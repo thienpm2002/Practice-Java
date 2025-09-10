@@ -1,0 +1,26 @@
+package LogicBuildingProblems;
+
+class Bai1 {
+
+	public static int swap(int n, int m) {
+		int closet = 0;
+		int midDifferent = Integer.MAX_VALUE;
+
+		for (int i = n - Math.abs(m); i <= n + Math.abs(m); i++) {
+			if (i % m == 0) {
+				int diffirent = Math.abs(n - i);
+				if (midDifferent > diffirent || (midDifferent == diffirent && Math.abs(i) > Math.abs(closet))) {
+					midDifferent = diffirent;
+					closet = i;
+				}
+			}
+		}
+		return closet;
+	}
+
+	public static void main(String[] args) {
+		int n = -11;
+		int m = 6;
+		System.out.println(swap(n, m));
+	}
+}

@@ -1,0 +1,9 @@
+package Bank;
+
+public class Bank {
+	public static void main(String[] args) {
+		BankingSystemInitializer bankDetails = new BankingSystemInitializer("448742310873423262",
+				"Fedral Bank of India.", "98385354265735737");
+		bankDetails.printBankDetails();
+	}
+}

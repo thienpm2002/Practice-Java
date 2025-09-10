@@ -1,0 +1,15 @@
+package LogicBuildingProblems;
+
+class Bai1 {
+
+	public static void swap(int n,int m) {
+	      int tmp = n%m;
+	      System.out.println(n-tmp);
+	}
+
+	public static void main(String[] args) {
+		int n = 13;
+		int m = 4;
+		swap(13,4);
+	}
+}

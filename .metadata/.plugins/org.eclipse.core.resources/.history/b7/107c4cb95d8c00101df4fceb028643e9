@@ -1,0 +1,44 @@
+package IndianSecretUnit;
+
+public class RAWAgent {
+	private int rawAgentBatchId;
+	private String codeName;
+	private String missionName;
+
+	public int getRawAgentBatchId() {
+		return rawAgentBatchId;
+	}
+
+	public void setRawAgentBatchId(int rawAgentBatchId) {
+		this.rawAgentBatchId = rawAgentBatchId;
+	}
+
+	public String getCodeName() {
+		return codeName;
+	}
+
+	public void setCodeName(String codeName) {
+		this.codeName = codeName;
+	}
+
+	public String getMissionName() {
+		return missionName;
+	}
+
+	public void setMissionName(String missionName) {
+		this.missionName = missionName;
+	}
+
+	public RAWAgent(int rawAgentBatchId, String codeName, String missionName) {
+		super();
+		this.rawAgentBatchId = rawAgentBatchId;
+		this.codeName = codeName;
+		this.missionName = missionName;
+	}
+
+	public void displayDetails() {
+		System.out.println("Id: " + rawAgentBatchId);
+		System.out.println("Name: " + codeName);
+		System.out.println("Mission name: " + missionName);
+	}
+}

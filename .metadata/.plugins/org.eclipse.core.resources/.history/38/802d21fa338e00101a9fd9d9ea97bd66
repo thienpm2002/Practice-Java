@@ -1,0 +1,20 @@
+package EasyProblems;
+
+public class SumDigitsNumber {
+	
+	public static int solution(int n) {
+		int sum =0;
+		int tmp = n;
+		while(tmp != 0) {
+			int a = n% 10;
+			tmp = tmp /10;
+			sum += a;
+		}
+		return sum;
+	}
+	
+     public static void main(String[] args) {
+		int n = 678;
+		System.out.println(solution(n));
+	}
+}

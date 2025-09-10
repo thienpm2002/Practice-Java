@@ -1,0 +1,36 @@
+package OrderSystem;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ShoppingCart {
+	private List<Product> cart;
+
+	public ShoppingCart() {
+		super();
+		this.cart = new ArrayList<Product>();
+	}
+
+	public void addItem(Product product) {
+		cart.add(product);
+		System.out.println("Product Added to Cart Successfully.");
+	}
+
+	public void removeItem(int productId) {
+		for (Product product : cart) {
+			if (product.getId() == productId) {
+				cart.remove(product);
+				break;
+			}
+			continue;
+		}
+		System.out.println(" Product Removed from Cart Successfully.");
+	}
+
+	public void viewCart() {
+		System.out.println("Your Shopping Cart:");
+		for (Product product : cart) {
+			product.displayDetails();
+		}
+	}
+}

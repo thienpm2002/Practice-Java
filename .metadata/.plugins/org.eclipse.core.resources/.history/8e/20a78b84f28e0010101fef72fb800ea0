@@ -1,0 +1,26 @@
+package EasyProblems;
+
+public class GCD {
+	static int solution(int a, int b) {
+		int i = 2;
+		int tmp = 1;
+		int result = 1;
+		while (a != 1) {
+			if (a % i == 0) {
+				a = a / i;
+				tmp *= i;
+				if (b % tmp == 0)
+					result = tmp;
+				else
+					break;
+			} else {
+				i = i + 1;
+			}
+		}
+		return result;
+	}
+
+	public static void main(String[] args) {
+		System.out.println(solution(36, 60));
+	}
+}

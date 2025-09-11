@@ -1,0 +1,18 @@
+package EasyProblems;
+
+public class DigitalRoot {
+	static int solution(int n) {
+		int sum = 0;
+		while (n != 0) {
+			sum += n % 10;
+			n /= 10;
+		}
+		if (sum >= 10)
+			return solution(sum);
+		return sum;
+	}
+
+	public static void main(String[] args) {
+		System.out.println(solution(12321));
+	}
+}

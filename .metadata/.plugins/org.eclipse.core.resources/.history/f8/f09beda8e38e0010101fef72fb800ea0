@@ -1,0 +1,19 @@
+package EasyProblems;
+
+public class CheckWhetherTriangle {
+	
+	 static boolean solution(int a, int b, int c) {
+		 if(a == 0 || b == 0 || c==0) return false;
+		 if(a + b <= c || a + c <=b || b+c <=a) return false;
+		 return true;
+	 }
+	 
+     public static void main(String[] args) {
+		int a = 7, b= 10, c = 5;
+		if(solution(a,b,c)) {
+			System.out.println("Valid");
+		}else {
+			System.out.println("Invalid");
+		}
+	}
+}

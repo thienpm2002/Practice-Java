@@ -1,0 +1,22 @@
+package EasyProblems;
+
+public class AddTwoFractions {
+
+	static int[] solution(int[] a, int[] b) {
+		if (a[1] == b[1])
+			return new int[] { a[0] + b[0], a[1] };
+		int numerator = a[0] * b[1] + b[0] * a[1];
+		int denominator = a[1] * b[1];
+		int gcd = GCD.solution(numerator, denominator);
+		if (gcd != 1) {
+			numerator /= gcd;
+			denominator /= gcd;
+		}
+		return new int[] { numerator, denominator };
+	}
+
+	public static void main(String[] args) {
+		int[] a = { 1, 2 }, b = { 3, 2 };
+		System.out.println(solution(a, b).toString());
+	}
+}

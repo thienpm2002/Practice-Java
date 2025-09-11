@@ -1,0 +1,13 @@
+package EasyProblems;
+
+public class FindNth {
+	static int solution(int n) {
+		if (n == 1)
+			return n;
+		return n + solution(n - 1);
+	}
+
+	public static void main(String[] args) {
+		System.out.println(solution(6));
+	}
+}

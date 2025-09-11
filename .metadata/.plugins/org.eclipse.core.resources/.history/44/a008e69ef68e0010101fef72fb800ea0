@@ -1,0 +1,21 @@
+package EasyProblems;
+
+public class PerfectNumber {
+	static boolean solution(int n) {
+		int limit = n / 2;
+		int sum = 0;
+		for (int i = 1; i <= limit; i++) {
+			if (n % i == 0)
+				sum += i;
+		}
+		return (sum == n);
+	}
+
+	public static void main(String[] args) {
+		if (solution(100)) {
+			System.out.println("True");
+		} else {
+			System.out.println("False");
+		}
+	}
+}

@@ -1,0 +1,29 @@
+package EasyProblems;
+
+public class PairCubeCount {
+
+	static int solution(int n) {
+		int length = (int) (Math.cbrt(n));
+		int l = 1;
+		int r = l + 1;
+		int result = 0;
+		while (l < length) {
+			if (Math.pow(l, 3) + Math.pow(r, 3) == n) {
+				result += 2;
+				l = r;
+			} else {
+				if (r == length) {
+					l += 1;
+					r = l + 1;
+				} else {
+					r++;
+				}
+			}
+		}
+		return result;
+	}
+
+	public static void main(String[] args) {
+		System.out.println(solution(35));
+	}
+}

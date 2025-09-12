@@ -1,0 +1,30 @@
+package EasyProblems;
+
+import java.util.HashMap;
+
+public class FractionRecurringDecimal {
+	static String solution(int a, int b) {
+		if (b == 0)
+			return "b khong hop le";
+		if (a == 0)
+			return "0";
+		HashMap<Integer, Integer> hs = new HashMap<>();
+		int nguyen = a / b;
+		int du = a % b;
+		String result = "";
+		while (du != 0) {
+			if (hs.containsKey(du))
+				break;
+			int str = (du * 10) / b;
+			result = result + str;
+			hs.put(du, str);
+			du = (du * 10) % b;
+
+		}
+		return "(" + result + ")";
+	}
+
+	public static void main(String[] args) {
+		System.out.println((double) (1 / 2));
+	}
+}

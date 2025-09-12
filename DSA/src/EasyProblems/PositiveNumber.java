@@ -1,0 +1,32 @@
+package EasyProblems;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class PositiveNumber {
+	static int[] solution(int n) {
+		ArrayList<Integer> arr = new ArrayList<>();
+		int mid = (int) (Math.sqrt(n));
+		for (int i = 1; i <= mid; i++) {
+			if (n % i == 0) {
+				int k = n / i;
+				if (k != i) {
+					arr.add(i);
+					arr.add(k);
+				} else {
+					arr.add(i);
+				}
+			}
+		}
+		int[] result = new int[arr.size()];
+		for (int i = 0; i < arr.size(); i++) {
+			result[i] = arr.get(i);
+		}
+		Arrays.sort(result);
+		return result;
+	}
+
+	public static void main(String[] args) {
+		System.out.println(Arrays.toString(solution(10)));
+	}
+}

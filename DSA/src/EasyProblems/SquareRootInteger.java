@@ -1,0 +1,11 @@
+package EasyProblems;
+
+public class SquareRootInteger {
+	static int solution(int n) {
+		return (int) (Math.floor(Math.sqrt(n)));
+	}
+
+	public static void main(String[] args) {
+		System.out.println(solution(95));
+	}
+}

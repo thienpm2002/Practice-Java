@@ -1,0 +1,10 @@
+package EasyProblems;
+
+public class DivisibleByThirteen {
+	static boolean solution(String n) {
+		
+	}
+     public static void main(String[] args) {
+		
+	}
+}

@@ -1,0 +1,11 @@
+package EasyProblems;
+
+public class KthDigita {
+   static int solution(int a, int b, int k) {
+	   String n = (int)(Math.pow(a, b)) + "";
+	   return (n.charAt(n.length() - k) - '0');
+   }
+   public static void main(String[] args) {
+	 System.out.println(solution(3,3,1));
+}
+}

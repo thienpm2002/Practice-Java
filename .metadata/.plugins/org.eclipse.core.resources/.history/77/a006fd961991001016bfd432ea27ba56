@@ -1,0 +1,23 @@
+package EasyProblems;
+
+public class TowerOfHN {
+	static void solution(int n, char A, char C, char B) {
+		if (n == 1) {
+			System.out.println("Disk " + n + " moved from " + A + " to " + C);
+			return;
+		}
+
+		  // Di chuyển n-1 đĩa từ A → B dùng C làm trung gian
+        solution(n - 1, A, B, C);
+
+        // Di chuyển đĩa cuối cùng từ A → C
+        solution(1, A, C, B);
+
+        // Di chuyển n-1 đĩa từ B → C dùng A làm trung gian
+        solution(n - 1, B, C, A);
+	}
+
+	public static void main(String[] args) {
+		solution(3, 'A', 'C', 'B');
+	}
+}

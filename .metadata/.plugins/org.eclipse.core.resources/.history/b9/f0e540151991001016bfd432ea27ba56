@@ -1,0 +1,17 @@
+package EasyProblems;
+
+public class TowerOfHN {
+	 static void solution(int n, char A, char C, char B ) {
+		 if(n==1) {
+			 System.out.println("Disk " + n + " moved from " + A + " to " + C);
+			 return;
+		 }
+		 
+		 solution(n-1, 'A','B','C');
+		 solution(1, 'A','C','B');
+		 solution(n-1,'B','C','A');
+	 }
+     public static void main(String[] args) {
+		solution(3,'A','C','B');
+	}
+}

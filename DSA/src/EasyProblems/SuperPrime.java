@@ -1,0 +1,42 @@
+package EasyProblems;
+
+public class SuperPrime {
+	static void solution(int n) {
+		// b1. Tim tat ca so nguyen to <= n
+		boolean[] initArr = new boolean[n + 1];
+		for (int i = 0; i <= n; i++) {
+			initArr[i] = true;
+		}
+		initArr[0] = initArr[1] = false;
+
+		for (int p = 2; p * p <= n; p++) {
+			if (initArr[p]) {
+				for (int i = p * p; i <= n; i += p) {
+					initArr[i] = false;
+				}
+			}
+		}
+		// B2. Tao 1 mang chua cac so nguyen to do
+		int count = 0;
+		for (int i = 0; i <= n; i++) {
+			if (initArr[i])
+				count++;
+		}
+		int[] res = new int[count];
+		int index = 0;
+		for (int p = 2; p <= n; p++) {
+			if (initArr[p])
+				res[index++] = p;
+		}
+		// B3. Kiem tra vi tri i+1 cua mang so nguyen to co phai so nguyen to khong
+		for (int i = 0; i < count; i++) {
+			if (initArr[i + 1]) {
+				System.out.print(res[i] + " ");
+			}
+		}
+	}
+
+	public static void main(String[] args) {
+		solution(17);
+	}
+}

@@ -4,7 +4,6 @@ import java.util.HashMap;
 
 public class UniqueNumber {
 	static int solution(int[] arr) {
-		int n = arr.length;
 		HashMap<Integer, Integer> count = new HashMap<>();
 		for (int v : arr) {
 			count.put(v, count.getOrDefault(v, 0) + 1);

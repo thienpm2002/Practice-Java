@@ -25,10 +25,22 @@ public class EquilibriumIndex {
 
 	/*
 	 * Toi uu cach nay la: pre + suf + arr[i] = sum (tuc la tien to + hau to + phan
-	 * tu hien tai = tong cac phan tu trong mang)
+	 * tu hien tai = tong cac phan tu trong mang) static int toiUu(int[] arr) { int
+	 * n = arr.length; int sum = 0; for (int i = 0; i < n; i++) { sum += arr[i]; }
+	 * int prev = arr[0];
+	 * 
+	 * for (int i = 1; i < n; i++) { int suf = sum - prev - arr[i]; if (suf == prev)
+	 * return i; else prev += arr[i]; }
+	 * 
+	 * return -1;
+	 * 
+	 * }
+	 * 
+	 * 
 	 */
+
 	public static void main(String[] args) {
-		int[] arr = { 1, 2, 0, 3 };
+		int[] arr = { -7, 1, 5, 2, -4, 3, 0 };
 		System.out.println(solution(arr));
 	}
 }

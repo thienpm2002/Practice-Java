@@ -12,6 +12,7 @@ public class SplitArrayEqualSum {
 			return;
 		}
 		int sumEqual = sum / 3;
+		// Tong o ben trai
 		int i = 0;
 		int sumL = arr[i];
 		for (int k = i; k < n - 2; k++) {
@@ -20,7 +21,7 @@ public class SplitArrayEqualSum {
 			else
 				break;
 		}
-
+		// Tong o giua
 		int j = i + 1;
 		int sumM = arr[j];
 		for (int k = j; k < n; k++) {

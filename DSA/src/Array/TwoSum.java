@@ -20,6 +20,7 @@ public class TwoSum {
 		return false;
 	}
 
+	/* Có thế dùng hashMap với O(N), O(N) */
 	public static void main(String[] args) {
 		int[] arr = { 0, -1, 2, -3, 1 };
 		int target = -2;

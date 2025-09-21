@@ -5,7 +5,7 @@ public class MaximumConsecutive {
 		int n = arr.length;
 		int l = 0, r = 0;
 		int maxLen = 0;
-
+		// Window sliding
 		while (r < n) {
 			if (arr[r] == 0) {
 				k--;

@@ -7,6 +7,8 @@ public class QuickSort {
 		arr[j] = tmp;
 	}
 
+	// Y tuong la cho cac phan tu be hon privot sang ben trai, lon hon sang ben
+	// phai, sau do lap lai cho 2 mang ben trai va phai
 	static int partition(int[] arr, int low, int hight) {
 		int i = low - 1;
 		int privot = arr[hight];
@@ -17,8 +19,8 @@ public class QuickSort {
 				swap(arr, i, j);
 			}
 		}
-		swap(arr, i + 1, hight);
-		return i + 1;
+		swap(arr, i + 1, hight); // cho privot vao giua
+		return i + 1; // day la vi tri privot
 	}
 
 	static void quickSort(int[] arr, int low, int hight) {

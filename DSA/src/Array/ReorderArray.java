@@ -5,7 +5,7 @@ public class ReorderArray {
 		int n = arr.length;
 		int[] tmp = new int[n];
 		for (int i = 0; i < n; i++) {
-			tmp[i] = arr[index[i]];
+			tmp[index[i]] = arr[i];
 		}
 		for (int i = 0; i < n; i++) {
 			arr[i] = tmp[i];

@@ -23,7 +23,7 @@ public class SmallestSubarray {
 				 * 
 				 * end = 3 → sum = 56 (> 51)
 				 * 
-				 * Lúc này cửa sổ = [1,4,45,6], độ dài = 4. 👉 Nhưng có thể nhỏ hơn, thử bỏ bớt
+				 * Lúc này cửa sổ = [1,4,45,6], độ dài = 4. Nhưng có thể nhỏ hơn, thử bỏ bớt
 				 * phần tử bên trái:
 				 * 
 				 * sum = 56 - 1 = 55 → vẫn > 51, cửa sổ = [4,45,6], độ dài = 3 (ngắn hơn, tốt

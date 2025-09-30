@@ -1,6 +1,11 @@
 package Array;
 
 public class MajorityElement {
+	/*
+	 * Ý tưởng thuật toán = hủy cặp. Giống như một cuộc bầu cử mà bạn cứ loại bỏ
+	 * từng cặp phiếu ủng hộ và phản đối. Nếu có một ứng viên được > 50% phiếu bầu,
+	 * thì dù loại kiểu gì đi nữa, cuối cùng ứng viên đó vẫn còn phiếu.
+	 */
 	static int solution(int[] arr) {
 		int n = arr.length;
 		int candidate = 0;

@@ -17,11 +17,15 @@ public class LongestSubarrayWithEqualNumber {
 		int preSum = 0;
 		int res = 0;
 		for (int i = 0; i < n; i++) {
+			// Chuyển 0 thành -1, cộng dồn
 			preSum += (arr[i] == 0) ? -1 : 1;
 
+			// Nếu preSum == 0 → subarray [0..i] có tổng = 0
 			if (preSum == 0) {
 				res += 1;
 			}
+
+			// Nếu preSum đã xuất hiện → tìm subarray (j+1..i)
 			if (mp.containsKey(preSum)) {
 				res = Math.max(res, i - mp.get(preSum));
 			} else {

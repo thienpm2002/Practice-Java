@@ -17,7 +17,6 @@ public class FirstRepeatingElement {
 
 	// Use HashSet
 	static int solution2(int[] arr) {
-		int n = arr.length;
 		Set<Integer> hs = new HashSet<>();
 		int index = Integer.MAX_VALUE;
 		for (int i = arr.length - 1; i >= 0; i--) {

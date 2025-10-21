@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class FindKLargestElements {
-	static List<Integer> solution(int[] arr, int k) {
+	static List<Integer> solution1(int[] arr, int k) {
 		int n = arr.length;
 		List<Integer> res = new ArrayList<>();
 		Arrays.sort(arr);
@@ -22,7 +22,7 @@ public class FindKLargestElements {
 	public static void main(String[] args) {
 		int[] arr = { 1, 23, 12, 9, 30, 2, 50 };
 		int k = 3;
-		List<Integer> res = solution(arr, k);
+		List<Integer> res = solution1(arr, k);
 		for (int x : res) {
 			System.out.print(x + " ");
 		}

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class AppearMoreKTime {
-
+	// Dung hashMap
 	static ArrayList<Integer> solution1(int[] arr, int k) {
 		ArrayList<Integer> res = new ArrayList<>();
 		HashMap<Integer, Integer> hm = new HashMap<>();

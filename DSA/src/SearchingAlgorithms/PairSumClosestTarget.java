@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class PairSumClosestTarget {
-
+	// Dung 2 vong lap
 	static ArrayList<Integer> solution1(int[] arr, int target) {
 		int n = arr.length;
 		int kc = Integer.MAX_VALUE;
@@ -29,6 +29,7 @@ public class PairSumClosestTarget {
 		return res;
 	}
 
+	// Dung 2 con tro
 	static ArrayList<Integer> solution2(int[] arr, int target) {
 		int n = arr.length;
 		Arrays.sort(arr);

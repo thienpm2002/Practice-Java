@@ -41,15 +41,6 @@ public class PartitioPoint {
 			sufFix[i] = Math.min(sufFix[i + 1], arr[i + 1]);
 		}
 
-		for (int i = 0; i < n; i++) {
-			System.out.print(preFix[i] + " ");
-		}
-		System.out.println();
-
-		for (int i = 0; i < n; i++) {
-			System.out.print(sufFix[i] + " ");
-		}
-		System.out.println();
 		for (int i = 1; i < n - 1; i++) {
 			if (arr[i] > preFix[i] && arr[i] < sufFix[i]) {
 				return arr[i];

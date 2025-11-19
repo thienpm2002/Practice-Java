@@ -58,15 +58,8 @@ public class TicTacToeGame {
 		return false;
 	}
 
-	static void print(String[] board) {
-		for (String x : board) {
-			System.out.print(x + " ");
-		}
-		System.out.println();
-	}
-
 	public static void main(String[] args) {
-		Scanner s = new Scanner(System.in);
+		Scanner sc = new Scanner(System.in);
 		String[] board = new String[9];
 		for (int a = 0; a < 9; a++) {
 			board[a] = String.valueOf(a + 1);
@@ -77,23 +70,24 @@ public class TicTacToeGame {
 		while (i <= 9) {
 			if (i % 2 == 0) {
 				System.out.println("O chon vi tri: ");
-				input = s.nextInt();
+				input = sc.nextInt();
 				board[--input] = "O";
 			} else {
 				System.out.println("X chon vi tri: ");
-				input = s.nextInt();
+				input = sc.nextInt();
 				board[--input] = "X";
 			}
 
 			// Logic game
 			if (play(board)) {
 				System.out.println(board[input] + " win!");
+				sc.close();
 				return;
 			}
 
 			i++;
 		}
 		System.out.println("Draw!");
-		s.close();
+		sc.close();
 	}
 }

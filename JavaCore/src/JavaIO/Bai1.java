@@ -14,6 +14,7 @@ public class Bai1 {
 				System.out.println(i + ". " + s);
 				i++;
 			}
+			br.close();
 		} catch (IOException e) {
 			// TODO: handle exception
 			System.out.println("An error occurred while reading the file: " + e.getMessage());

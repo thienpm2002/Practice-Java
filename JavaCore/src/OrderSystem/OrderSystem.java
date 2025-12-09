@@ -25,7 +25,6 @@ public class OrderSystem {
 		cus.getCart().removeItem(productId);
 		System.out.println("3. View Cart");
 		cus.getCart().viewCart();
-		String placeOrder = s.nextLine();
 		System.out.println("4. Order Placed Successfully. Thank you for shopping with us!");
 		s.close();
 	}

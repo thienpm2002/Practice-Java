@@ -1,0 +1,5 @@
+Used to build Android apps, desktop and web apps, enterprise backend systems, and cloud-based software.
+In high demand with many job opportunities in software development.
+Has popular frameworks like Spring and Hibernate which makes it powerful for enterprise applications.
+Supports object-oriented programming for clean, maintainable and reusable code.
+Top companies like Amazon, Netflix, and LinkedIn use Java.

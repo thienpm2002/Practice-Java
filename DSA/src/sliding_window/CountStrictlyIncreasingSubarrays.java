@@ -2,21 +2,22 @@ package sliding_window;
 
 public class CountStrictlyIncreasingSubarrays {
 	static int solution1(int[] arr) {
-		int i = 0, j = 1, elemtMax = arr[i];
-		int n = arr.length;
+		int len = 1;
 		int count = 0;
-		while (j < n) {
-			if (elemtMax < arr[j]) {
-				elemtMax = arr[j];
-				j++;
-			} else if (elemtMax >= arr[j]) {
-				count += j - i;
-				i = j;
-				j++;
-				elemtMax = arr[i];
+		int n = arr.length;
+
+		for (int i = 1; i < n; i++) {
+			if (arr[i] > arr[i - 1]) {
+				len++;
+			} else {
+				count += (len * (len - 1)) / 2;
+				len = 1;
 			}
 		}
-		return count + j - i;
+
+		count += (len * (len - 1)) / 2;
+
+		return count;
 	}
 
 	public static void main(String[] args) {

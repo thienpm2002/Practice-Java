@@ -13,26 +13,24 @@ import java.util.Optional;
 
 public class StudentManager {
 	private Map<Long, Student> studentMap = new HashMap<>();
-	private long MAX_CODE;
+	private long MAX_CODE = Long.MIN_VALUE;
 
 	public StudentManager() {
 		super();
 		try (BufferedReader br = new BufferedReader(new FileReader("Core1.txt"))) {
 			String line;
-			long max = Long.MIN_VALUE;
 			while ((line = br.readLine()) != null) {
 				String[] words = line.split(",");
 
 				long studentCode = Long.valueOf(words[0]);
-				if (max < studentCode)
-					max = studentCode;
+				if (MAX_CODE < studentCode)
+					MAX_CODE = studentCode;
 
 				String name = words[1];
 				double score = Double.valueOf(words[2]);
 
 				studentMap.put(studentCode, new Student(studentCode, name, score));
 			}
-			MAX_CODE = max + 1;
 		} catch (IOException e) {
 			// TODO: handle exception
 			e.printStackTrace();
@@ -57,7 +55,7 @@ public class StudentManager {
 			return false;
 		}
 
-		long newCode = MAX_CODE++;
+		long newCode = ++MAX_CODE;
 
 		studentMap.put(newCode, new Student(newCode, checkName, score));
 		try (BufferedWriter bw = new BufferedWriter(new FileWriter("Core1.txt", true))) {
@@ -81,7 +79,7 @@ public class StudentManager {
 	}
 
 	// Update to file
-	public void updateToFile() {
+	public void saveToFile() {
 		// Update to file
 		try (BufferedWriter bw = new BufferedWriter(new FileWriter("Core1.txt"))) {
 			List<Student> list = new ArrayList<>(studentMap.values());
@@ -105,7 +103,7 @@ public class StudentManager {
 		s.setScore(score);
 
 		// Update to file
-		updateToFile();
+		saveToFile();
 		System.out.println("Update Student successfully!");
 		return true;
 	}
@@ -118,7 +116,7 @@ public class StudentManager {
 		studentMap.remove(s.getStudentCode());
 
 		// Update to file
-		updateToFile();
+		saveToFile();
 		System.out.println("Delete Student successfully!");
 		return true;
 	}

@@ -12,8 +12,8 @@ import java.util.Map;
 import java.util.Optional;
 
 public class StudentManager {
-//	private List<Student> students = new ArrayList<>();
 	private Map<Long, Student> studentMap = new HashMap<>();
+	private long MAX_CODE;
 
 	public StudentManager() {
 		super();
@@ -26,9 +26,9 @@ public class StudentManager {
 				String name = words[1];
 				double score = Double.valueOf(words[2]);
 
-//				students.add(new Student(studentCode, name, score));
 				studentMap.put(studentCode, new Student(studentCode, name, score));
 			}
+			MAX_CODE = studentMap.size() + 1;
 		} catch (IOException e) {
 			// TODO: handle exception
 			e.printStackTrace();
@@ -37,7 +37,6 @@ public class StudentManager {
 
 	// View List
 	public void viewStudents() {
-//		students.forEach(System.out::println);
 		studentMap.forEach((key, value) -> System.out.println(value.toString()));
 	}
 
@@ -54,9 +53,8 @@ public class StudentManager {
 			return false;
 		}
 
-		long newCode = studentMap.size() + 1;
+		long newCode = MAX_CODE++;
 
-//		students.add(new Student(newCode, checkName, score));
 		studentMap.put(newCode, new Student(newCode, checkName, score));
 		try (BufferedWriter bw = new BufferedWriter(new FileWriter("Core1.txt", true))) {
 			bw.newLine();
@@ -72,7 +70,6 @@ public class StudentManager {
 
 	// Search student
 	public Optional<Student> searchStudent(long studentCode) {
-//		return students.stream().filter(s -> s.getStudentCode() == studentCode).findFirst();
 		if (studentMap.get(studentCode) != null)
 			return Optional.of(studentMap.get(studentCode));
 		else

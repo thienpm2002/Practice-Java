@@ -76,15 +76,8 @@ public class StudentManager {
 			return Optional.empty();
 	}
 
-	// Update student
-	public boolean updateStudent(long code, String name, double score) {
-		Student s = searchStudent(code)
-				.orElseThrow(() -> new RuntimeException("Student with studentCode " + code + " not found!"));
-
-		if (name.trim().length() != 0)
-			s.setName(name);
-		s.setScore(score);
-
+	// Update to file
+	public void updateToFile() {
 		// Update to file
 		try (BufferedWriter bw = new BufferedWriter(new FileWriter("Core1.txt"))) {
 			List<Student> list = new ArrayList<>(studentMap.values());
@@ -96,7 +89,19 @@ public class StudentManager {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
+	}
 
+	// Update student
+	public boolean updateStudent(long code, String name, double score) {
+		Student s = searchStudent(code)
+				.orElseThrow(() -> new RuntimeException("Student with studentCode " + code + " not found!"));
+
+		if (name.trim().length() != 0)
+			s.setName(name);
+		s.setScore(score);
+
+		// Update to file
+		updateToFile();
 		System.out.println("Update Student successfully!");
 		return true;
 	}
@@ -109,16 +114,7 @@ public class StudentManager {
 		studentMap.remove(s.getStudentCode());
 
 		// Update to file
-		try (BufferedWriter bw = new BufferedWriter(new FileWriter("Core1.txt"))) {
-			List<Student> list = new ArrayList<>(studentMap.values());
-			for (Student st : list) {
-				bw.write(st.getStudentCode() + "," + st.getName() + "," + st.getScore());
-				bw.newLine();
-			}
-		} catch (IOException e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		}
+		updateToFile();
 		System.out.println("Delete Student successfully!");
 		return true;
 	}

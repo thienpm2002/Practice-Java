@@ -114,7 +114,7 @@ public class Main {
 				break;
 			}
 			default:
-				throw new IllegalArgumentException("Unexpected value: " + choice);
+				System.out.println("Enter choice to 0 - 7!");
 			}
 		} while (choice != 0);
 

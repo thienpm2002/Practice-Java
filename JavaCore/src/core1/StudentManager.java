@@ -19,16 +19,20 @@ public class StudentManager {
 		super();
 		try (BufferedReader br = new BufferedReader(new FileReader("Core1.txt"))) {
 			String line;
+			long max = Long.MIN_VALUE;
 			while ((line = br.readLine()) != null) {
 				String[] words = line.split(",");
 
 				long studentCode = Long.valueOf(words[0]);
+				if (max < studentCode)
+					max = studentCode;
+
 				String name = words[1];
 				double score = Double.valueOf(words[2]);
 
 				studentMap.put(studentCode, new Student(studentCode, name, score));
 			}
-			MAX_CODE = studentMap.size() + 1;
+			MAX_CODE = max + 1;
 		} catch (IOException e) {
 			// TODO: handle exception
 			e.printStackTrace();
@@ -57,8 +61,8 @@ public class StudentManager {
 
 		studentMap.put(newCode, new Student(newCode, checkName, score));
 		try (BufferedWriter bw = new BufferedWriter(new FileWriter("Core1.txt", true))) {
-			bw.newLine();
-			bw.write(newCode + "," + checkName + "," + score);
+//			bw.newLine();
+			bw.write("\n" + newCode + "," + checkName + "," + score);
 		} catch (IOException e) {
 			// TODO: handle exception
 			e.printStackTrace();

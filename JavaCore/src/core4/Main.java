@@ -33,7 +33,7 @@ public class Main {
 //		}
 //
 //		try {
-//			List<Student> students = repo.findByAll(s -> "Thien".equals(s.getName()));
+//			List<Student> students = repo.findAll(s -> "Thien".equals(s.getName()));
 //			if (students.size() == 0) {
 //				System.out.println("Not found!");
 //			} else {

@@ -11,5 +11,5 @@ public interface Repository<T, ID> {
 
 	Optional<T> findById(ID id);
 
-	List<T> findByAll(Predicate<T> condition);
+	List<T> findAll(Predicate<T> condition);
 }

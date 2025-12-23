@@ -51,7 +51,7 @@ public class StudentRepository implements Repository<Student, Long> {
 	}
 
 	@Override
-	public List<Student> findByAll(Predicate<Student> condition) {
+	public List<Student> findAll(Predicate<Student> condition) {
 		// TODO Auto-generated method stub
 		return students.stream().filter(condition).collect(Collectors.toList());
 	}
